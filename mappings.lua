@@ -10,7 +10,9 @@ M.gopher = {
     ["<leader>gsy"] = {
       "<cmd> GoTagAdd yaml <CR>",
       "Add yaml struct tags"
-    }
+    },
+    ["<leader>db"] = { "<cmd>DBUI<cr>", "Open DBUI" },
+    ["<leader>dt"] = { "<cmd>DBUIToggle<cr>", "Toggle DBUI" },
   }
 }
 
