@@ -69,68 +69,9 @@ local plugins = {
       return opts
     end
   },
-   {
-    "kristijanhusak/vim-dadbod-ui",
-    dependencies = {
-      { "tpope/vim-dadbod", lazy = true },
-      { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
-    },
-    cmd = {
-      "DBUI",
-      "DBUIToggle",
-      "DBUIAddConnection",
-      "DBUIFindBuffer",
-    },
-    config = function()
-      -- Your DBUI configuration
-      vim.g.db_ui_use_nerd_fonts = 1
-    end,
-  },
-  {
-    "folke/trouble.nvim",
-    lazy = false,
-    cmd = {
-      "Trouble",
-    },
-    branch = "dev",
-    dependencies= {"nvim-tree/nvim-web-devicons"},
-    keys = {
-      {
-        "<leader>xx",
-        "<cmd>Trouble diagnostics toggle<cr>",
-        desc = "Diagnostics (Trouble)",
-      },
-      {
-        "<leader>xX",
-        "<cmd>Trouble document_diagnostics<cr>",
-        desc = "Buffer Diagnostics (Trouble)",
-      },
-      {
-        "<leader>cs",
-        "<cmd>Trouble symbols<cr>",
-        desc = "Symbols (Trouble)",
-      },
-      {
-        "<leader>cl",
-        "<cmd>Trouble lsp_references<cr>",
-        desc = "LSP Definitions / references / ... (Trouble)",
-      },
-      {
-        "<leader>xL",
-        "<cmd>Trouble loclist<cr>",
-        desc = "Location List (Trouble)",
-      },
-      {
-        "<leader>xQ",
-        "<cmd>Trouble quickfix<cr>",
-        desc = "Quickfix List (Trouble)",
-      },
-    },
-    config = function()
-      require("trouble").setup {
-        -- Your custom configuration goes here
-      }
-    end
-  }
+  require "custom.plugins.dadbod-ui",
+  require "custom.plugins.trouble",
+  require "custom.plugins.transparent",
+  require "custom.plugins.gitintegration", 
 }
 return plugins
