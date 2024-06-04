@@ -72,6 +72,6 @@ local plugins = {
   require "custom.plugins.dadbod-ui",
   require "custom.plugins.trouble",
   require "custom.plugins.transparent",
-  require "custom.plugins.gitintegration", 
+  require "custom.plugins.gitintegration",
 }
 return plugins
