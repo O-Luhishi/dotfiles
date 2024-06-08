@@ -21,7 +21,7 @@ lspconfig.gopls.setup {
   },
 }
 
-local tsxServers = {"tsserver", "tailwindcss", "eslint"}
+local tsxServers = {"tsserver", "tailwindcss", "eslint", "templ", "htmx", "html"}
 
 for _, lsp in ipairs(tsxServers) do
   lspconfig[lsp].setup {

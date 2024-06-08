@@ -55,6 +55,21 @@ M.setup = function()
   end
 end
 
+ local templ_format = function()
+    local bufnr = vim.api.nvim_get_current_buf()
+    local filename = vim.api.nvim_buf_get_name(bufnr)
+    local cmd = "templ fmt " .. vim.fn.shellescape(filename)
 
+    vim.fn.jobstart(cmd, {
+        on_exit = function()
+            -- Reload the buffer only if it's still the current buffer
+            if vim.api.nvim_buf_is_valid(bufnr) and vim.api.nvim_buf_get_name(bufnr) == filename then
+                vim.cmd('checktime')
+            end
+        end,
+    })
+end
+
+vim.api.nvim_create_autocmd({ "BufWritePost" }, { pattern = { "*.templ" }, callback = templ_format })
 return M
 

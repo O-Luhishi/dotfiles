@@ -7,12 +7,16 @@ local plugins = {
         "typescript-language-server",
         "tailwindcss-language-server",
         "eslint-lsp",
-        "prettierd"
+        "prettierd",
+        "templ",
+        "htmx-lsp",
+        "html-lsp",
       },
     },
   },
   {
     "neovim/nvim-lspconfig",
+    lazy = false,
     config = function()
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
@@ -34,6 +38,7 @@ local plugins = {
   },
   {
     "olexsmir/gopher.nvim",
+    lazy = false,
     ft = "go",
     config = function(_, opts)
       require("gopher").setup(opts)
@@ -73,5 +78,6 @@ local plugins = {
   require "custom.plugins.trouble",
   require "custom.plugins.transparent",
   require "custom.plugins.gitintegration",
+  require "custom.plugins.tmpl",
 }
 return plugins
