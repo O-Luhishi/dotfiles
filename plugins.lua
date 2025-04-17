@@ -79,5 +79,6 @@ local plugins = {
   require "custom.plugins.transparent",
   require "custom.plugins.gitintegration",
   require "custom.plugins.tmpl",
+  require "custom.plugins.snacks",
 }
 return plugins

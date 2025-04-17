@@ -16,4 +16,7 @@ M.gopher = {
   }
 }
 
+--M.ui = {
+  --  telescope = { style = "borderless" }, -- borderless / bordered
+--}
 return M
